@@ -21,7 +21,7 @@ margin-right: 15px;}
     font-size: 13px;line-height: 30px;padding:0 38px 0;}
 .top_bar .help{background: url("../design/top_xtb.png") no-repeat 0 -52px;}
 /*图片位置和电话号码的位置*/
-/*如何解决缺少字体的问题*/
+
 .top_bar .phone{background: url(../design/top_xtb.png) no-repeat 6px -20px;}
 .top_bar .help a {color:#fff;}
 .top_bar .phone a {color:#fff;}
@@ -49,7 +49,7 @@ font-size:13px;color:#666;outline: none;}
 .search .btn{position:absolute;top:0;right:0;
     width:43px;height:33px;background: none;border-style: none;}
 /*切图背景和当前状态
-strong标签到底有什么作用
+strong标签
 span的圆角*/
 #nav{width: 960px;height: 36px;padding-top:8px;margin:0 auto;}
 #nav li{float:left;
@@ -72,8 +72,7 @@ padding:0 15px;}
 #content_top{width: 1000px;background: url("../design/content.png")no-repeat;}
 #content_bottom{width: 1000px;background: url("../design/content.png")no-repeat -2000px bottom}
 
-/*黄色的字没有显示出来
-相对定位和绝对*/
+/*相对定位和绝对*/
 #ad{width:940px ;height:300px;position: relative;top:10px;margin: 0 auto;}
 #ad ul,#ad li,#ad p ,#ad h2{position: absolute;}
 #ad ul{top:0;left: 0;z-index: 1;}
@@ -132,7 +131,7 @@ font-size:15px;color:#fff;font-weight:bold; background: url("../design/rbtn.png"
 
 #payment{margin: 33px 0 0 18px;}
 
-/* 没有呈现出变色*/
+/*变色*/
 .sort{height: 20px;}
 .sort dl{float:left;}
 .sort dt{float:left;color:#7474;font-weight: bold;font-size: 12px;padding-right: 2px;}
@@ -170,7 +169,7 @@ display:none;}
 line-height: 20px;font-family: 宋体；}
 .page a:hover{color:#fff;background:#b20e00;}
 .page .a:active{}/*宋体改变了符号样式*/
-/*白色边框始终不太对*/
+/*白色边框*/
 .scroll_wrap{height:197px;background: url("../design/white_k.png")repeat-x 0 -483px;}
 .scroll_wrap_l{height:197px;background: url("../design/white_k.png")no-repeat left  -87px;}
 .scroll_wrap_r{height:197px;background: url("../design/white_k.png")no-repeat right -284px;position:relative;}
@@ -178,7 +177,7 @@ line-height: 20px;font-family: 宋体；}
 .prev,.next{width: 35px;height: 43px;position: absolute;top:70px;}
 .prev{left:0;background: url("../design/white_k.png")no-repeat;}
 .next{right:0;background: url("../design/white_k.png")no-repeat 0 -42px;}
-/*文字和图片的位置错位*/
+/*文字和图片的位置*/
 .list_wrap{width: 615px;margin: 0 auto ;padding: 32px;}
 .list_wrap ul{height: 150px;}
 .list_wrap li{width: 205px;float:left;}
@@ -190,7 +189,6 @@ line-height: 20px;font-family: 宋体；}
 #footer {height:302px;margin-top:32px;background: url("../design/footer_bc.png")repeat-x;margin-bottom: 0;}
 .black_line{height: 60px;width: 960px;margin:0 auto;}
 .safe li{float: left;}
-/*如何插入一条文字*/
 .black_line li .search{position: relative;left:40px;top:15px; }
 .red_bottom{height: 242px;
     width:960px;margin: 0 auto;padding: 0;background: url("../design/red_mess.png");}
