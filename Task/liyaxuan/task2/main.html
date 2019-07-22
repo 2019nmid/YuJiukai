@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MYtask_2_lyx</title>
+</head>
+ <link href="mystyle.css" rel="stylesheet"> </link>
+   <script type="text/javascript" src="./main.js"></script>
+<body>
+<script>
+    function tick_button() {
+        var tick=document.getElementById("tick");
+        if(tick.src.match("./image/un_auto.png")){
+            tick.src="./image/tick.png";
+        }
+        else{
+            tick.src="./image/un_auto.png";
+        }
+    }
+function changeimage() {
+        var a=document.getElementById("btn_1");
+        var p_1=document.getElementById("denglu");
+        var p_2=document.getElementById("td_code");
+        if (a.src.match("./image/code_1.png")) {
+            p_1.style.opacity = 0;
+            p_2.style.opacity = 1;
+            a.src = "./image/code_2.png";
+            document.getElementById("button_1").style.cursor="default";
+            document.getElementById("button_2").style.cursor="default";
+            document.getElementById("text1").style.cursor="default";
+            document.getElementById("tooltip1_text").innerHTML="短信登录/注册";
+            document.getElementById("tooltip1_text").style.background=url("image/tip_bc2.png");
+        }
+        else {
+            p_1.style.opacity = 1;
+            p_2.style.opacity = 0;
+            a.src = "./image/code_1.png";
+             document.getElementById("button_1").style.cursor="pointer";
+            document.getElementById("button_2").style.cursor="pointer";
+            document.getElementById("text1").style.cursor="text";
+            document.getElementById("tooltip1_text").innerHTML="扫码登录";
+            document.getElementById("tooltip1_text").style.background=url("image/tip_bc.png");
+
+        }
+}
+function changefirst() {
+        var denglu_1=document.getElementById("denglu_1");
+        var denglu_2=document.getElementById("denglu_2");
+        var button_1=document.getElementById("button_1");
+
+        var button_2=document.getElementById("button_2");
+        var line=document.getElementById("line_a");
+        if(line.src="./image/line_2.png"){
+            line.src="./image/line_1.png";
+            denglu_2.style.opacity=0;
+            denglu_1.style.opacity=1;
+        }
+        if(button_1.style.color="#9b9b9b"){
+            button_1.style.color="#333333";
+             button_2.style.color="#9b9b9b";
+        }
+}
+function changesecond() {
+        var denglu_1=document.getElementById("denglu_1");
+        var denglu_2=document.getElementById("denglu_2");
+        var button_1=document.getElementById("button_1");
+        var button_2=document.getElementById("button_2");
+        var line=document.getElementById("line_a");
+        if(line.src="./image/line_1.png"){
+            line.src="./image/line_2.png";
+            denglu_1.style.opacity=0;
+            denglu_2.style.opacity=1;
+        }
+            if(button_2.style.color="#9b9b9b"){
+            button_2.style.color="#333333";
+             button_1.style.color="#9b9b9b";
+        }
+}
+</script>
+<div id="top">
+    <div id="douban">
+        <a href="#"></a>
+    </div>
+    <div class="search">
+        <form action="">
+            <input id="text1" class="text" type="text"value="书籍、电影、音乐、小组、小站、成员"/>
+            <input class="btn" type="submit" value=""/>
+            </form>
+        <div class="nav_list">
+                    <ul class="clear">
+                        <li class="space">
+                            <a href=""><img src="./image/dushu.png" alt=""/></a>
+
+                        </li>
+                         <li class="space">
+                            <a href=""><img src="./image/dy.png" alt=""/></a>
+
+                        </li>
+                        <li class="space">
+                            <a href=""><img src="./image/yy.png" alt=""/></a>
+
+                        </li>
+                         <li class="space">
+                            <a href=""><img src="./image/xz.png" alt=""/></a>
+
+                        </li>
+                        <li class="space">
+                            <a href=""><img src="./image/tc.png" alt=""/></a>
+
+                        </li>
+                         <li class="space">
+                            <a href=""><img src="./image/fm.png" alt=""/></a>
+
+                        </li>
+                        <li class="space">
+                            <a href=""><img src="./image/sj.png" alt=""/></a>
+
+                         <li class="space">
+                            <a href=""><img src="./image/pd.png" alt=""/></a>
+                        </li>
+                    </ul>
+                    </div>
+    </div>
+</div>
+<div id="banner">
+    <div class="douban">
+        <img src="./image/douban6.0.png" class="douban6_0"/>
+        <div class="dload">
+           <div id="dload_1"><a href="#"><img src="image/onload.png"></a> </div>
+            <div id="dload_2">
+                <a  class="show" href="#">
+                    <img src="image/t_code.png"/>
+                    <img class="tooltip1_img" src="image/small_code.png">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="logon">
+        <a class="tooltip" href="#" id="tooltip1">
+            <img id="btn_1"  onclick="changeimage()" src="./image/code_1.png">
+            <span class="tooltiptext" id="tooltip1_text">扫码登录</span>
+        </a>
+        <div id="denglu">
+            <a id="button_1" href="#" onclick="changefirst()">短信登录/注册</a>
+            <a id="button_2" href="#" onclick="changesecond()" >密码登录</a>
+            <div id="line">
+                <img id="line_a" src="./image/line_1.png">
+            </div>
+            <div class="denglu_main" id="denglu_1">
+                <p class="main1_p1">登录注册表示同意<span><a id="main1_a1" href="#"> 豆瓣使用协议、隐私政策</a></span></p>
+                <div class="input">
+                    <form action="" class="form">
+                        <a href="#" id="main1_a3"><img src="./image/add.png"></a>
+                        <input id="text_1" class="text" type="text"value="手机号"/>
+                    </form>
+                    <form class="form">
+                        <input id="text_2" class="text" type="text" value="验证码"/>
+                        <a class="link" id="main1_a2" href="#">获取验证码</a>
+                    </form>
+                </div>
+                <a id="onload_btn" href="#"><img src="image/onload_btn.png"></a>
+                <br>
+                <br>
+                <a id="tick_link" onclick="tick_button()"><img id="tick" src="./image/un_auto.png"/></a><span id="auto">下次自动登录</span>
+                <a href="#" class="link" id="link_1">收不到验证码</a>
+            </div>
+            <div class="denglu_mian" id="denglu_2">
+                <p><a id="main2_a1" href="#">找回密码</a></p>
+                <div class="input">
+                    <form action="" class="form">
+                        <input id="text_3" class="text" type="text"value="手机号/邮箱"/>
+                    </form>
+                    <form class="form">
+                        <input id="text_4" class="text" type="text" value="密码"/>
+                    </form>
+                </div>
+                <a id="onload_btn_" href="#"><img src="image/onload_btn.png"></a>
+                <br>
+                <a href="#" class="link" id="link_2">海外手机登录</a>
+            </div>
+        </div>
+        <div id="td_code">
+            <a href="#">二维码登录</a>
+            <img src="./image/big_code.png">
+        </div>
+        <div class="else">
+            <p>第三方登录</p>
+        <a href="#" class="icon"><img src="image/weichat.png"/></a>
+        <a href="#" class="icon"> <img src="image/weibo.png"/></a>
+        </div>
+    </div>
+</div>
+<div id="content">
+    <div id="hot_topic">
+<h>
+    热点内容 ······
+</h>
+        <span>(<a href="#">更多</a>)</span>
+        <div class="hot">
+        <div class="hot_l">
+            <ul class="clear">
+                        <li>
+                            <a href="#"><img src="./image/1_1.png" alt=""/></a>
+                            <p>Google Doodles 63张照片</p>
+
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/1_1.png" alt=""/></a>
+                            <p>玩羊毛 101张照片</p>
+
+                        </li>
+                 <li>
+                            <a href="#"><img src="./image/1_1.png" alt=""/></a>
+                            <p>贝聿铭建筑作品集 389张照片</p>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/1_1.png" alt=""/></a>
+                            <p>自慰的石头艺术 44张照片</p>
+                        </li>
+            </ul>
+        </div>
+        <div class="hot_m">
+            <p>拍照不再偏色，摄影里的白平衡详解</p>
+            <p>肥肥鱼的日记</p>
+            <p>对初学摄影的同学来说，除了照片的明暗控制，还</p>
+            <p>需要注意的是颜色的变化。最常出现...</p>
+            <br/>
+            <p>对话蔡明亮：看着李康生的脸变老，我觉得太珍贵了</p>
+            <br/>
+            <p>8天7夜周游日本高山北陆，领略不一样的小城故事</p>
+        </div>
+        <div class="hot_r">
+            <a href="#"><img src="./image/1_2.png"/></a>
+            <div class="text">
+                <h>
+    热门话题 ······
+                </h>
+        <span>(<a href="#">去话题广场</a>)</span>
+                <ul class="hot_r_text">
+                    <li>爸妈的收藏爱好</li>
+                    <li>游戏中的“意识”有多重要</li>
+
+                    <li>中年健忘危机</li>
+                    <li>当我们谈乡村教育的时候，我们在谈什么？</li>
+                    <li>海明威诞辰120周年</li>
+                    <li>你修复过的老物件儿</li>
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="time">
+        <div class="time_inner">
+            <p>豆瓣时间</p>
+            <div class="center">
+                <h>
+    热门专栏 ······
+                </h>
+        <span>(<a href="#">更多</a>)</span>
+                <ul class="time_pic">
+
+                    <li><a><img src="./image/2_1.png"/> </a>
+                    <p>马伯庸的冷门书单</p></li>
+                      <li><a><img src="./image/2_1.png"/> </a>
+                    <p>马伯庸的冷门书单</p></li>
+                     <li><a><img src="./image/2_1.png"/> </a>
+                    <p>马伯庸的冷门书单</p></li>
+                      <li><a><img src="./image/2_1.png"/> </a>
+                    <p>马伯庸的冷门书单</p></li>
+                    <li><a><img src="./image/2_1.png"/> </a>
+                    <p>马伯庸的冷门书单</p></li>
+                      <li><a><img src="./image/2_1.png"/> </a>
+                    <p>马伯庸的冷门书单</p></li>
+                     <li><a><img src="./image/2_1.png"/> </a>
+                    <p>马伯庸的冷门书单</p></li>
+                      <li><a><img src="./image/2_1.png"/> </a>
+                    <p>马伯庸的冷门书单</p></li>
+                        <li><a><img src="./image/2_1.png"/> </a>
+                    <p>马伯庸的冷门书单</p></li>
+                      <li><a><img src="./image/2_1.png"/> </a>
+                    <p>马伯庸的冷门书单</p></li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div id="vedio">
+        <div class="vedio_inner">
+             <p>视频</p>
+            <div class="center">
+                <a class="a1" href="#"><h>
+    瓣嘴 ······
+                </h></a>
+                <ul class="vedio_pic">
+
+                    <li><a><img src="./image/3_1.png"/> </a>
+                    <p>马伊琍衣品遭围攻吐槽，清奇脑回路解读流行语</p></li>
+                      <li><a><img src="./image/3_1.png"/> </a>
+                    <p>马伊琍衣品遭围攻吐槽，清奇脑回路解读流行语</p></li>
+                     <li><a><img src="./image/3_1.png"/> </a>
+                    <p>马伊琍衣品遭围攻吐槽，清奇脑回路解读流行语</p></li>
+                </ul>
+                 <a class="a2" href="#"><h>
+    观影会客厅 ······
+                </h></a>
+                <ul class="vedio_pic">
+
+                    <li><a><img src="./image/3_1.png"/> </a>
+                    <p>马伊琍衣品遭围攻吐槽，清奇脑回路解读流行语</p></li>
+                      <li><a><img src="./image/3_1.png"/> </a>
+                    <p>马伊琍衣品遭围攻吐槽，清奇脑回路解读流行语</p></li>
+                     <li><a><img src="./image/3_1.png"/> </a>
+                    <p>马伊琍衣品遭围攻吐槽，清奇脑回路解读流行语</p></li>
+                </ul>
+
+        </div>
+
+            </div>
+
+    </div>
+    <div id="film">
+        <div class="film_inner">
+            <div class="film_l">
+                <h><a href="#">电影</a></h>
+                <ul>
+                    <li><a href="#">影讯&购票</a></li>
+                    <li><a href="#">影讯&购票</a></li>
+                     <li><a href="#">影讯&购票</a></li>
+                    <li><a href="#">影讯&购票</a></li>
+                    <li><a href="#">影讯&购票</a></li>
+                    <li><a href="#">影讯&购票</a></li>
+                     <li><a href="#">影讯&购票</a></li>
+                    <li><a href="#">影讯&购票</a></li>
+                </ul>
+            </div>
+            <div class="film_m">
+                 <h>
+    正在热映 ······
+                </h>
+        <span>(<a href="#">更多</a>)</span>
+                <ul class="film_pic">
+
+                    <li><a><img src="./image/4_1.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/4_btn.png"></a></div></li>
+                      <li><a><img src="./image/4_1.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/4_btn.png"></a></div></li>
+                          <li><a><img src="./image/4_1.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/4_btn.png"></a></div></li>
+                      <li><a><img src="./image/4_1.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/4_btn.png"></a></div></li>
+                 <li><a><img src="./image/4_1.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/4_btn.png"></a></div></li>
+                      <li><a><img src="./image/4_1.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/4_btn.png"></a></div></li>
+                          <li><a><img src="./image/4_1.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/4_btn.png"></a></div></li>
+                      <li><a><img src="./image/4_1.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/4_btn.png"></a></div></li>
+                </ul>
+            </div>
+            <div class="film_r">
+                <div class="film_r_t">
+                    <h>影片分类 ······</h>
+                    <span>(<a href="#">更多</a>)</span>
+                    <ul class="film_r_l1">
+                        <li><span><a href="#">文艺</a></span></li>
+                        <li><span><a href="#">文艺</a></span></li>
+                        <li><span><a href="#">文艺</a></span></li>
+                        <li><span><a href="#">文艺</a></span></li>
+                        <li><span><a href="#">文艺</a></span></li>
+                        <li><span><a href="#">文艺</a></span></li>
+                        <li><span><a href="#">文艺</a></span></li>
+                        <li><span><a href="#">文艺</a></span></li>
+
+                    </ul>
+                </div>
+                <div class="film_r_b">
+                      <h>近期热门 ······</h>
+                    <span>(<a href="#">更多</a>)</span>
+                       <ul class="film_r_l2">
+                           <li><span>1.<a href="#">恶人传</a></span></li>
+                           <li><span>2.<a href="#">孟买酒店</a></span></li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="group">
+        <div class="group_inner">
+            <div class="group_l">
+                <h><a href="#">小组</a></h>
+                <ul>
+                    <li><a href="#">精选</a></li>
+                    <li><a href="#">文化</a></li>
+                     <li><a href="#">行摄</a></li>
+                    <li><a href="#">娱乐</a></li>
+                    <li><a href="#">时尚</a></li>
+                    <li><a href="#">生活</a></li>
+                     <li><a href="#">科技</a></li>
+                </ul>
+            </div>
+            <div class="group_m">
+                  <h>热门小组 ······
+                </h>
+        <span>(<a href="#">更多</a>)</span>
+                <ul class="group_list">
+                    <li>
+                        <a href="#"><img src="./image/5_1.png"/></a>
+                        <div class="text">
+                            <p class="p1"><a href="#">搭讪学</a></p>
+                            <p class="p2">94266个成员</p>
+                        </div>
+                    </li>
+                     <li>
+                        <a href="#"><img src="./image/5_1.png"/></a>
+                        <div class="text">
+                            <p class="p1"><a href="#">搭讪学</a></p>
+                            <p class="p2">94266个成员</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./image/5_1.png"/></a>
+                        <div class="text">
+                            <p class="p1"><a href="#">搭讪学</a></p>
+                            <p class="p2">94266个成员</p>
+                        </div>
+                    </li>
+                     <li>
+                        <a href="#"><img src="./image/5_1.png"/></a>
+                        <div class="text">
+                            <p class="p1"><a href="#">搭讪学</a></p>
+                            <p class="p2">94266个成员</p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="group_r">
+                  <h>小组分类 ······</h>
+                <p> <a href="#">兴趣 >></a></p>
+                <ul class="group_r_l">
+                       <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                      <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                     <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                      <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                </ul>
+                <p> <a href="#">生活 >></a></p>
+                 <ul class="group_r_l">
+                    <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                         <li><a href="#">旅行</a></li>
+                      <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                         <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                      <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                     <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="reading">
+        <div class="reading_inner">
+                  <div class="read_l">
+                <h><a href="#">读书</a></h>
+                <ul>
+                    <li><a href="#">分类浏览</a></li>
+                    <li><a href="#">阅读</a></li>
+                     <li><a href="#">书评</a></li>
+                    <li><a href="#">购书单</a></li>
+                    <li><a href="#">作者</a></li>
+                </ul>
+                      <a href="#"><img src="./image/6_1.png"></a>
+                      <p>豆瓣阅读</p>
+            </div>
+            <div class="read_m">
+                   <h>
+    新书速递 ······
+                </h>
+        <span>(<a href="#">更多</a>)</span>
+                <ul class="read_pic">
+                    <li><a><img src="./image/6_2.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/6_btn.png"></a></div></li>
+                    <li><a><img src="./image/6_2.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/6_btn.png"></a></div></li>
+                     <li><a><img src="./image/6_2.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/6_btn.png"></a></div></li>
+                    <li><a><img src="./image/6_2.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/6_btn.png"></a></div></li>
+                </ul>
+                <h>
+    原创数字作品 ······
+                </h>
+        <span>(<a href="#">更多</a>)</span>
+                <ul class="read_pic">
+                        <li><a><img src="./image/6_2.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/6_btn.png"></a></div></li>
+                    <li><a><img src="./image/6_2.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/6_btn.png"></a></div></li>
+                     <li><a><img src="./image/6_2.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/6_btn.png"></a></div></li>
+                    <li><a><img src="./image/6_2.png"/> </a>
+                        <div class="btn"><a href="#"><img src="./image/6_btn.png"></a></div></li>
+                </ul>
+            </div>
+            <div class="read_r">
+                                  <h>热门标签 ······</h>
+                  <span>(<a href="#">更多</a>)</span>
+                <ul class="read_r_l">
+                  <li> <span> [文学]</span></li>
+                    <li><a href="#">小说</a></li>
+                    <li><a href="#">随笔</a></li>
+                    <li><a href="#">散文</a></li>
+                     <li><a href="#">诗歌</a></li>
+                    <li><a href="#">童话</a></li>
+                      <li><a href="#">名著</a></li>
+                </ul>
+                <hr color="#eaeaea">
+                <ul class="read_r_l">
+                  <li> <span> [文学]</span></li>
+                    <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                      <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                     <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                      <li><a href="#">旅行</a></li>
+                    <li><a href="#">旅行</a></li>
+                </ul>
+                <hr color="#eaeaea">
+
+
+            </div>
+
+        </div>
+    </div>
+    <div id="music">
+        <div class="music_inner">
+            <div class="music_l">
+                 <h><a href="#">音乐</a></h>
+                <ul>
+                    <li><a href="#">音乐人</a></li>
+                    <li><a href="#">专题</a></li>
+                     <li><a href="#">排行榜</a></li>
+                    <li><a href="#">乐评</a></li>
+                    <li><a href="#">歌单</a></li>
+                    <li><a href="#">阿比鹿音乐奖</a></li>
+                </ul>
+                 <a href="#"><img src="./image/7_2.png"></a>
+                      <p>豆瓣FM</p>
+
+            </div>
+            <div class="music_m">
+                    <h>
+    豆瓣新碟榜 ······
+                </h>
+        <span>(<a href="#">更多</a>)</span>
+                <ul class="music_pic">
+                    <li><a><img src="./image/7_1.png"/> </a>
+                        <div class="text">1.<a href="#"> LUNAR<br/>周笔畅 BiBi Chou</a></div></li>
+                     <li><a><img src="./image/7_1.png"/> </a>
+                        <div class="text">1.<a href="#"> LUNAR<br/>周笔畅 BiBi Chou</a></div></li>
+                  <li><a><img src="./image/7_1.png"/> </a>
+                        <div class="text">1.<a href="#"> LUNAR<br/>周笔畅 BiBi Chou</a></div></li>
+                     <li><a><img src="./image/7_1.png"/> </a>
+                        <div class="text">1.<a href="#"> LUNAR<br/>周笔畅 BiBi Chou</a></div></li>
+                            <li><a><img src="./image/7_1.png"/> </a>
+                        <div class="text">1.<a href="#"> LUNAR<br/>周笔畅 BiBi Chou</a></div></li>
+                     <li><a><img src="./image/7_1.png"/> </a>
+                        <div class="text">1.<a href="#"> LUNAR<br/>周笔畅 BiBi Chou</a></div></li>
+                  <li><a><img src="./image/7_1.png"/> </a>
+                        <div class="text">1.<a href="#"> LUNAR<br/>周笔畅 BiBi Chou</a></div></li>
+                     <li><a><img src="./image/7_1.png"/> </a>
+                        <div class="text">1.<a href="#"> LUNAR<br/>周笔畅 BiBi Chou</a></div></li>
+                </ul>
+            </div>
+            <div class="music_r">
+                 <h>本周流行音乐人 ······</h>
+                  <span>(<a href="#">更多</a>)</span>
+                <ul class="read_r_l">
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div id="pindou">
+        <div class="pindou_inner">
+            <div class="pin_l">
+                 <h><a href="#">品豆</a></h>
+            </div>
+            <div class="pin_m">
+                  <h>
+    热卖商品 ······
+                </h>
+        <span>(<a href="#">更多</a>)</span>
+                <ul class="pin_pic">
+                    <li><a><img src="./image/8_1.png"/> </a>
+                        <div class="text"><a href="#">豆瓣冻顶乌龙茶</a>￥59.00</div></li>
+                        <li><a><img src="./image/8_1.png"/> </a>
+                        <div class="text"><a href="#">豆瓣冻顶乌龙茶</a>￥59.00</div></li>
+                    <li><a><img src="./image/8_1.png"/> </a>
+                        <div class="text"><a href="#">豆瓣冻顶乌龙茶</a>￥59.00</div></li>
+                        <li><a><img src="./image/8_1.png"/> </a>
+                        <div class="text"><a href="#">豆瓣冻顶乌龙茶</a>￥59.00</div></li>
+                </ul>
+            </div>
+            <div class="pin_r">
+               <!--  <p>热门活动 ······
+                  <span>(<a href="#">更多</a>)</span></p>
+                 <p>官方小组 ······
+                  <span>(<a href="#">更多</a>)</span></p>  -->
+            </div>
+        </div>
+    </div>
+    <div id="same_city">
+        <div class="same_inner">
+            <div class="same_l">
+
+            </div>
+            <div class="same_m">
+
+            </div>
+            <div class="same_r">
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div id="footer">
+<div class="text_l">
+    <p>
+© 2005－2019 douban.com, all rights reserved 北京豆网科技有限公司
+    </p>
+    <p>
+        <span><a href="#">京ICP证090015号</a></span> 京ICP备<apan><a href="#">11027288</a></apan> 网络视听许可证0110418号
+    </p>
+    <p>
+        京网文[2015]2026-368号  <apan><a href="#">京公网安备11010502000728</a> </apan> 新出网证(京)字129号
+
+    </p>
+    <p>
+违法和不良信息举报电话：4008353331-9
+    </p>
+    <p>
+     <img src="./image/footer_br.png"/>   <span><a href="#">中国互联网举报中心</a></span> 电话：<span><a href="#">12377 新出发京批字第直160029号</a></span>
+    </p>
+</div>
+    <div class="text_r">
+                        <ul class="list">
+                            <li><a href="#">关于豆瓣 </a></li>
+                             <li><a href="#">在豆瓣工作 </a></li>
+                             <li><a href="#">联系我们 </a></li>
+                             <li><a href="#">法律声明 </a></li>
+                            <li><a href="#">帮助中心 </a></li>
+                             <li><a href="#">移动应用 </a></li>
+                             <li><a href="#">豆瓣广告</a></li>
+                        </ul>
+        <a href="#" class="jubao">
+        <img src="image/jubao.png"/>
+        </a>
+
+    </div>
+</div>
+</body>
+</html>
