@@ -1,6 +1,6 @@
 var postitons = [0, '276px'];
 
-var underlineDom = document.querySelector('.underline');
+var change = document.querySelector('.underline');
 
 var lis = document.querySelectorAll('li');
 
@@ -12,7 +12,7 @@ for (var i = 0; i < lis.length; i++) {
 				lis[j].className = '';
 			}
 			lis[index].className = 'active';
-			underlineDom.style.left = postitons[index];
+			change.style.left = postitons[index];
 		}
 	}(i);
 }
