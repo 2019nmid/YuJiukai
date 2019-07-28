@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Title</title>
+    <style type="text/css">
+        #imgBox{position:absolute ;left: 4px;margin: 40px;width: 320px;height: 200px;
+        border:2px solid #363b3f;opacity:0.3;}
+        #hidder{position:absolute ;left: 4px;margin: 40px;width: 320px;height: 200px;
+        ;opacity:0;background: #ebf28f;}
+        #verify{opacity:1;position:absolute;margin: 40px;left:2px;top:12px;}
+        #verified{width:2px ;height:30px ;background:none ;position:absolute ;left:200px;}
+        #handle{width:320px ;height: 40px;background:#dfe1e2 ;border-radius:15px ;position:absolute ;top:210px;margin-left:40px;margin-top:60px;border: none;}
+        #swiper{z-index: 10;width:60px ;height:60px ;background: url("./img/sliper.png")no-repeat;position:absolute;top:-8px;left:-3px;}
+        #text{font-size:18px ;color:#96949d ;position: relative;top:6px;left:60px ;}
+        #refreshment{width:320px ;height:40px ;position:absolute ;top:330px;left:50px;}
+        #refresh{position: relative;left: 20px;}
+        #tip2_text {visibility: hidden;width: 74px;height: 40px;background: url("./img/tip.png")no-repeat;
+        color:white;text-align: center;position: absolute;z-index: 12;bottom: 100%;left: 50%;margin-left: -100px;
+        font-size:15px;}
+        #tip1_text{visibility: hidden;width: 74px;height: 40px;background: url("./img/tip.png")no-repeat;
+        color:white;text-align: center;position: absolute;
+            l;z-index: 12;bottom: 100%;left:20px;
+        font-size:15px;}
+        #tip2:hover #tip2_text{
+            visibility: visible;
+        }
+        #tip1:hover #tip1_text{
+            visibility: visible;
+        }
+        #tip1:hover,#tip2:hover{
+            cursor: pointer;
+        }
+        #swiper:hover{
+            cursor: pointer;
+        }
+  #wrong_tip{width: 320px;height: 0px;position: absolute;bottom:504px;left:43px;
+        background:#de715b;text-align: center;
+            -webkit-transition: width 2s, height 2s,
+            -webkit-transform 2s; /* For Safari 3.1 to 6.0 */
+         transition: width 2s, height 2s, transform 2s; }
+        #wrong_tip span{font-size: 17px;color:#efe4ff ;opacity: 0;
+        -webkit-transition: width 1s, height 1s,opacity 1s;
+            -webkit-transform: 1s; /* For Safari 3.1 to 6.0 */
+         transition: opacity 1s, height 1s, transform 1s;}
+
+    </style>
+</head>
+<body>
+<div id="all">
+ <div id="box">
+     <canvas id="verify" width="320px" height="194px"></canvas>
+     <canvas id="imgBox" width="320px" height="194px" ></canvas>
+     <img id="hidder"/>
+      <div id="wrong_tip"><span id="wrong_text">拖动滑块将悬浮图像正确拼合</span></div>
+ </div>
+ <div>
+     <div id="verified"></div>
+
+     <div id="handle">
+         <div id="swiper"></div>
+
+         <span id="text">拖动左边滑块完成上面拼图</span>
+
+     </div>
+
+     <div id="refreshBox">
+
+         <span id="refreshment">
+             <span id="tip1">
+                 <img id="no" src="./img/x.png"/>
+                 <span id="tip1_text">关闭验证</span>
+             </span>
+             <span id="tip2">
+                 <img src="./img/re.png" id="refresh"/>
+                 <span id="tip2_text">刷新验证</span>
+             </span>
+         </span>
+        </div>
+ </div>
+</div>
+<script>
+
+var img = document.createElement('img');
+
+var c=document.getElementById("imgBox");//画布
+var verify = document.getElementById("verify");//小滑块
+
+
+var hidder = document.getElementById("hidder");
+var swiper = document.getElementById("swiper");
+var handle = document.getElementById("handle");
+var verified = document.getElementById("verified");
+var text = document.getElementById("text");
+
+
+var w = 40, r = 6, PI = Math.PI;//r为缺口的圆形的半径
+//在文件夹放入十张图片，用数字命名
+var randomly=document.getElementById("refresh");
+var i=0;
+  randomly.onclick=function() {
+      location.reload();
+
+
+      //var ran=Math.floor(Math.random()*10);
+      //img.src="./img/"+ran+".png";
+
+      //生成x，y的随机数
+      //var x=(Math.ceil(Math.random()*10))*10;
+      //var y=(Math.ceil(Math.random()*10))*10;
+      //加载图片
+  }
+  //将裁剪出来的滑块放入block
+
+  load();
+  var mark_x;
+  verified.style.left = mark_x + 44 +"px";//设置验证的位置
+var ran;
+
+   function  load() {
+
+   ran=Math.floor(Math.random()*10);
+    //console.log(ran);
+    img.src="./img/"+ran+".png";
+    var big_ctx=c.getContext("2d");
+    var block_ctx =verify .getContext("2d");
+    parseInt(Math.random()*(200-60+1)+60,10);
+    var x =Math.floor(Math.random()*(200-60+1)+60);
+    mark_x = x;
+    parseInt(Math.random()*(100-60+1)+60,10);
+     var y =Math.floor(Math.random()*(100-60+1)+60);
+     //设置x的范围为60—200之间的随机数
+    //var x=(Math.ceil(Math.random()*10))*10;
+    //var y=(Math.ceil(Math.random()*10))*10;
+    console.log(x);
+   // console.log(y);
+      jiazai(x,y,big_ctx,block_ctx);
+
+
+   }
+   //console.log(mark_x);
+   function jiazai(x,y,big_ctx,block_ctx){
+       draw(x,y,block_ctx);
+       block_ctx.drawImage(img, 0, 0, 320, 194);
+       big_ctx.drawImage(img, 0, 0, 320, 194);
+       draw_fill(x,y,big_ctx);
+       var blockWidth = w + r * 2;
+       var _y = y - r * 2 + 5;// 滑块实际的y坐标
+       var ImageData = block_ctx.getImageData(x, _y, blockWidth, blockWidth);
+       verify.width = blockWidth;
+       block_ctx.putImageData(ImageData,0, _y);//复制粘贴
+        draw_fill(x,y,block_ctx);
+   }
+
+
+  function draw(x,y,ctx) {
+    ctx.beginPath();
+    ctx.moveTo(x,y);
+   ctx.lineTo(x+w/2,y);
+   ctx.arc(x+w/2,y-r+5, r,0,2*PI); //圆心偏移向内
+   ctx.lineTo(x+w/2,y);
+    ctx.lineTo(x+w,y);
+   ctx.lineTo(x+w,y+w/2);
+   ctx.arc(x+w+r-5,y+w/2,r,0,2*PI);
+   ctx.lineTo(x+w,y+w/2);
+    ctx.lineTo(x+w,y+w);
+    ctx.lineTo(x,y+w);
+    ctx.lineTo(x,y);
+    ctx.clip();
+  }
+
+
+
+  function draw_fill(x,y,ctx) {
+      ctx.beginPath();
+    ctx.moveTo(x,y);
+   ctx.lineTo(x+w/2,y);
+   ctx.arc(x+w/2,y-r+5, r,0,2*PI); //圆心偏移向内
+   ctx.lineTo(x+w/2,y);
+    ctx.lineTo(x+w,y);
+   ctx.lineTo(x+w,y+w/2);
+   ctx.arc(x+w+r-5,y+w/2,r,0,2*PI);
+   ctx.lineTo(x+w,y+w/2);
+    ctx.lineTo(x+w,y+w);
+    ctx.lineTo(x,y+w);
+    ctx.lineTo(x,y);
+      ctx.fillStyle="#c9cbdb";
+      ctx.fill();
+  }
+
+
+
+swiper.onmousedown=function () {
+       clearInterval(timerId);
+    swiper.style.backgroundImage = "url(./img/slipeing.png)";
+    text.style.opacity = 0;
+    var x_init;
+    var x_var;
+   x_init =  fun(event);
+    move(x_var, swiper,verify,x_init);
+}
+
+
+function move(xvar,obj1,obj2,init){
+    handle.onmousemove = function (){
+   xvar = fun(event);
+   var distant = xvar-init;
+    obj1.style.left =  distant + "px";
+    obj2.style.left = distant +"px";
+    //处理范围
+
+}
+  swiper.onmouseup = function(){
+        swiper.style.backgroundImage = "url(./img/sliper.png)";
+
+
+
+        var x=parseInt(verified.offsetLeft);
+        var y=parseInt(obj2.offsetLeft);
+        var margin=x-y;
+        console.log(x);
+        console.log(y);
+        handle.onmousemove = null;
+        setTimeout("clear();text .style.opacity = 1;",3000);
+        if(margin>=-5&&margin<=5){//设置容错为5px；
+            hidder.src = "./img/"+ran+".png";
+            hidder.style.opacity = 1;
+            console.log("yes!");
+            wrong_text.innerHTML="您的速度超过了90%的用户";
+            wrong_tip.style.background = "#5ebf70";
+              wrong_text.style.opacity = 1;
+        wrong_tip . style.height = 30 + 'px';
+        setTimeout(
+            ";wrong_text.style.opacity = 0;\n" +
+            "  wrong_tip . style.height = 0 + 'px';",2000);
+            //显示该图片的完整状态
+            //重新加载
+            setTimeout("location.reload();",4000);
+
+
+        }
+         else{console.log("wrong!");
+        console.log(margin);
+         wrong_text.innerHTML="拖动滑块将上方拼图正确拼合";
+         wrong_tip.style.background = "#de715b";
+        wrong_text.style.opacity = 1;
+        wrong_tip . style.height = 30 + 'px';
+        hidder.style.opacity = 0;
+        imgBox.style.opacity = 0.3;
+        setTimeout("wrong_text.style.opacity = 0;\n" +
+            "  wrong_tip . style.height = 0 + 'px';",2000);
+        }
+    }
+}
+var timerId = 0;
+function clear() {//复位
+    verify.style.left = 5 + "px";
+    clearInterval(timerId);
+    timerId = setInterval(function () {
+        var speed = -10;
+        if (Math.abs(0 - swiper.offsetLeft) <= speed) {
+            clearInterval(timerId);
+            swiper.style.left = 5 + 'px';
+        }
+        else {
+            if (swiper.offsetLeft >= 5) {
+                swiper.style.left = swiper.offsetLeft + speed + 'px';
+                console.log(swiper.offsetLeft);
+            }
+        }
+    }, 10);//设置复位时的速度为10px每10毫秒
+
+}
+function fun(e) {
+
+    var x = e.clientX;
+
+    var y = e.clientY;
+
+    return x;
+}
+</script>
+</body>
+</html>
