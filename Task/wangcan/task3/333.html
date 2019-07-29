@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3滑动验证</title>
+    <link rel="stylesheet" href="./style/task3.css">
+    <script type="text/javascript" src="./js/task3.js"></script>
+</head>
+<body>
+    <div>
+      <div id="hand_right">
+            <ul id="hand_right1">
+              <input value="  你的手机号/邮箱" 
+                onfocus="if(value=='  你的手机号/邮箱'){value=''}"
+                onblur="if (value==''){value='  你的手机号/邮箱'}"  
+                type="text"
+              ><br/>
+              
+              <input value="  密码"
+              onfocus="if(value=='  密码'){value=''}"
+              onblur="if (value==''){value='  密码'}"
+              type="password"
+              >
+            </ul>
+            
+            <ul id="hand_right2">
+              <label><input  type="checkbox" value="  " />记住我</label>
+              <p>&ensp;不是自己的电脑上不要勾选此项</p>
+                <a href="https://www.bilibili.com/blackboard/help.html#%E8%B4%A6%E5%8F%B7%E7%9B%B8%E5%85%B3">无法验证？</a>
+                <a href="https://passport.bilibili.com/register/findpassword.html#/verify">忘记密码？</a>
+            </ul><br/>
+            
+            <ul id="hand_right3">
+                <a href="./images/dl.png" onclick="dl();return false"><img src="./images/dl.png"></a>
+                <a href="https://passport.bilibili.com/register/phone.html#/phone"><img src="./images/zc.png"></a>
+            </ul>
+      
+            <div id="slideBar" style="display: none;" ></div>
+        </div>
+        
+        <script type="text/javascript">
+        var dataList = ["0","1"];
+        var options = {
+            dataList: dataList,
+            success:function(){  
+                console.log("show");  
+            },
+            fail: function(){
+                console.log("fail");  
+            }
+        };
+        SliderBar("slideBar", options);
+        </script>
+    </div>
+</body>
+</html>
