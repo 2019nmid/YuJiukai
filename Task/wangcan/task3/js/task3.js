@@ -53,7 +53,7 @@ function xs(){
             this.imgHeight = 0;
             this.imgList = [];
             this.isSuccess = true;
-            for (var i = 1; i < 10; i++) {             //这行可换图片数目
+            for (var i = 1; i < 12; i++) {             //这行可换图片数目
                 this.imgList.push(i + ".jpg");
             }
         }
