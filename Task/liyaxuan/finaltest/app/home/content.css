@@ -1,0 +1,81 @@
+.index_tab__item--current{
+    color: #31c27c;
+}
+.index_tab__item--current:hover{
+    color: #31c27c;
+}
+a.js_song:hover{
+    color: #31c27c;
+}
+.popup_guide__btn:hover{
+    color: white;
+}
+
+
+
+/*使用css来控制播放按钮的出现和图片的效果*/
+.mod_cover:hover .playlist__pic {
+transform: scale(1.5);
+    animation:.8s img ;
+    -webkit-animation:.8s img;
+     filter: brightness(60%);
+}
+.mod_cover:hover .songlist__pic{
+  transform: scale(1.5);
+    animation:.8s img ;
+    -webkit-animation:.8s img;
+     filter: brightness(60%);
+}
+.mod_cover:hover .mv_list__pic{
+    transform: scale(1.5);
+    animation:.8s img ;
+    -webkit-animation:.8s img;
+     filter: brightness(60%);
+}
+.mod_cover:hover .mod_cover__icon_play{
+    opacity: 1;
+    zoom:1.5;
+}
+.mod_cover:hover .toplist__line{
+    opacity: 0;
+}
+@keyframes img {
+    0% {
+               filter: brightness(90%);
+            }
+            40% {
+               filter: brightness(80%);
+            }
+            70% {
+             filter: brightness(70%);
+            }
+            100% {
+                filter: brightness(60%);
+            }
+
+}
+@-webkit-keyframes img{
+       0% {
+               filter: brightness(90%);
+            }
+            40% {
+               filter: brightness(80%);
+            }
+            70% {
+             filter: brightness(70%);
+            }
+            100% {
+                filter: brightness(60%);
+            }
+
+}
+.toplist__line {
+    position: absolute;
+    left: 50%;
+    top: 160px;
+    margin-left: -18px;
+    width: 36px;
+    height: 2px;
+    background: #fff;
+
+}

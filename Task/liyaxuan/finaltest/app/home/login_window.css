@@ -1,0 +1,154 @@
+p{
+    margin: 0;
+}
+.modal-dialog{
+
+    margin:0 auto;
+}
+.modal-dialog{
+    margin-top: 140px;
+    width:692px ;
+    height: 480px;
+}
+.small_window_btn{
+    color: #31c27c;
+    font-size: 16px;
+
+    outline: none;
+
+}
+.we_log{
+color: #565656;
+}
+.qq_log{
+    margin:0 100px 0 230px;
+}
+button{
+    border: none;
+}
+#log_by_account:hover,#register_enter:hover{
+    cursor: pointer;
+}
+.modal-body{
+    position: relative;
+    height: 428px;
+    padding-left:110px ;
+    padding-top:20px;
+}
+.qq_log{
+
+}
+.qq_log_content{
+    padding-top:7px;
+    margin-bottom: 20px;
+    position: relative;
+    height: 338px;
+
+}
+.qq_log_content_left{
+    position: absolute;
+    left: 0;
+    width: 320px;
+    height: 304px;
+
+}
+.qq_log_content_right{
+    position: absolute;
+    left:320px ;
+    width: 260px;
+    height: 320px;
+
+}
+.options{
+    position: absolute;
+    left: 60px;
+    top:300px;
+}
+.down_load_green{
+    position: absolute;
+    top:370px;
+    left: 240px;
+}
+.quick_log_h,.slow_hog_h{
+font-size: 20px;
+    color: #333;
+    margin-left: 44px;
+}
+.quick_log_detail_txt,.slow_log_detail_txt{
+color: #666;
+    font-size: 16px;
+    position: relative;
+    margin-bottom: 36px;
+    margin-top:20px;
+}
+.options{
+        color: #666;
+    font-size: 12px;
+}
+.quick_code{
+    margin-left: 44px;
+}
+.qq_log_right_p, label{
+font-size: 12px;
+}
+.qq_log_right_p ,label{
+     color:#555555;
+    margin-bottom: 24px;
+}
+input{
+    margin-bottom: 20px;
+}
+
+.txt_p2{
+    margin-left:24px ;
+}
+.txt_p1_a,.right_blue{
+    color:#307ceb;
+
+}
+.qq_log_right_p2{
+    margin-top: 40px;
+}
+.slow_input{
+    width: 270px;
+    height: 38px;
+    padding: 10px 0 10px 10px;
+    line-height: 18px;
+    color: #333;
+    font-family: Verdana,Tahoma,Arial;
+    font-size: 16px;
+}
+
+/*还未设置输入框的格式*/
+.we_log_content_center{
+}
+.we_code{
+    margin-top:70px ;
+    margin-left: 180px;
+    margin-bottom: 25px;
+
+}
+.p1{
+font-size: 13px;
+    color: #373737;
+    margin-left: 170px;
+    margin-bottom: 15px;
+}
+.p2,.p3{
+    font-size: 13px;
+    color: #999999;
+
+}
+.p2{
+    margin-left: 210px;
+    margin-bottom: 15px;
+}
+.p3{
+margin-left: 120px;
+}
+.slow_input::placeholder{
+    font-size: 14px;
+    line-height: 16px;
+    color: #aaa;
+    cursor: text;
+}

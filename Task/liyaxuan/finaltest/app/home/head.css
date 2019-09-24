@@ -1,0 +1,18 @@
+a.top_nav__link:hover{
+    color: #31c27c;
+}
+a.top_nav__link.top_nav__link--current:hover{
+    color: #FFFFFF;
+}
+/*保持第一个的颜色*/
+a.top_subnav__link:hover{
+    color: #31c27c;
+}
+a.top_subnav__link.top_subnav__link--current:hover{
+    color: #FFFFFF;
+}
+.index_tab__item:hover,.top_login__link.js_login:hover{
+    color: #31c27c;
+}
+
+/*头部几个导航栏的位置*/
