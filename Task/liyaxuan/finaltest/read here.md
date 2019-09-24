@@ -8,17 +8,17 @@
 - 可点击子页面：
 
 
-![](.\build\images\预览.png)
+![](./build/images/预览.png)
 
-![](.\build\images\预览1.png)
+![](./build/images/预览1.png)
 
 - 可点击登录窗口：
 
-![](.\build\images\预览2.png)
+![](./build/images/预览2.png)
 
 
 
 - 登录和注册页面：
 
 
-![](.\build\images\预览3.png)
+![](./build/images/预览3.png)
