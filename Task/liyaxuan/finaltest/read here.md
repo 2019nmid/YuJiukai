@@ -21,4 +21,4 @@
 - 登录和注册页面：
 
 
-![](https://upload-images.jianshu.io/upload_images/15605979-b684478b2ef5a31f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/15605979-307411311ab2a58c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
