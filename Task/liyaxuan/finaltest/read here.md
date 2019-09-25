@@ -8,17 +8,17 @@
 - 可点击子页面：
 
 
-![](./build/images/预览.png)
+![](https://upload-images.jianshu.io/upload_images/15605979-a950ea5a97203197.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](./build/images/预览1.png)
+![](https://upload-images.jianshu.io/upload_images/15605979-9a9b4e4c8040e299.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - 可点击登录窗口：
 
-![](./build/images/预览2.png)
+![](https://upload-images.jianshu.io/upload_images/15605979-b684478b2ef5a31f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
 - 登录和注册页面：
 
 
-![](./build/images/预览3.png)
+![](https://upload-images.jianshu.io/upload_images/15605979-b684478b2ef5a31f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
